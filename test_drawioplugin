@@ -1,0 +1,18 @@
+Draw.loadPlugin(function(ui) {
+    // Plugin wird geladen
+    console.log('Mein Plugin wurde geladen!');
+
+    // Alle Knoten im Diagramm durchlaufen und Text hinzufügen
+    var graph = ui.editor.graph;
+    var cells = graph.getChildVertices(graph.getDefaultParent());
+
+    // Beispiel: Text zu jedem Knoten hinzufügen
+    graph.getModel().beginUpdate();
+    try {
+        for (var i = 0; i < cells.length; i++) {
+            graph.getModel().setValue(cells[i], "Automatischer Text");
+        }
+    } finally {
+        graph.getModel().endUpdate();
+    }
+});
