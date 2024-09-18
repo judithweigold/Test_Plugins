@@ -1,3 +1,4 @@
+console.log('Mein Plugin wurde geladen!');
 Draw.loadPlugin(function(ui) {
     // Plugin wird geladen
     console.log('Mein Plugin wurde geladen!');
